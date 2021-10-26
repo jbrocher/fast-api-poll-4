@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fastapi-poll-1"
+version = "0.1.0"
+description = ""
+authors = ["jb <jeanb.rocher@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.70.0"
+uvicorn = "^0.15.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.9b0"
+reorder-python-imports = "^2.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
