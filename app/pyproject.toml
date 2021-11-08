@@ -8,6 +8,8 @@ authors = ["jb <jeanb.rocher@gmail.com>"]
 python = "^3.8"
 fastapi = "^0.70.0"
 uvicorn = "^0.15.0"
+SQLAlchemy = "^1.4.26"
+alembic = "^1.7.4"
 
 [tool.poetry.dev-dependencies]
 black = "^21.9b0"
