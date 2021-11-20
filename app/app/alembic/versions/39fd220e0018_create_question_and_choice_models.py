@@ -1,8 +1,8 @@
-"""create_question_and_choice
+"""create question and choice models
 
-Revision ID: 0356bd71c0a6
+Revision ID: 39fd220e0018
 Revises: 
-Create Date: 2021-11-11 10:42:23.669802
+Create Date: 2021-11-20 10:17:29.831275
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '0356bd71c0a6'
+revision = '39fd220e0018'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -29,8 +29,8 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('choice_text', sa.String(length=200), nullable=False),
     sa.Column('votes', sa.Integer(), nullable=False),
-    sa.Column('question', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['question'], ['poll_question.id'], ),
+    sa.Column('question_id', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['question_id'], ['poll_question.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('id')
     )

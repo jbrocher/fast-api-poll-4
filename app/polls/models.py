@@ -26,4 +26,4 @@ class Choice(Base):
     id = Column(Integer, unique=True, primary_key=True)
     choice_text = Column(String(200), nullable=False)
     votes = Column(Integer, default=0, nullable=False)
-    question = Column(Integer, ForeignKey("poll_question.id"))
+    question_id = Column(Integer, ForeignKey("poll_question.id"))
