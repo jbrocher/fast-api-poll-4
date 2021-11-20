@@ -3,9 +3,16 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { queryFn } from "./utils/queryFn";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      queryFn: queryFn,
+    },
+  },
+});
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>

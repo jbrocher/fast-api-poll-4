@@ -23,11 +23,13 @@ def get_db():
 
 @router.get("/", response_model=List[schemas.ReadQuestion])
 async def index(db=Depends(get_db)):
+    """List existing polls."""
     return crud.list_questions(db)
 
 
 @router.get("/{id}/", response_model=schemas.ReadQuestionChoices)
 async def question_detail(id: int, db=Depends(get_db)):
+    """Return a poll details, including the results."""
     try:
         return crud.get_question(db, id)
     except NoResultFound:
